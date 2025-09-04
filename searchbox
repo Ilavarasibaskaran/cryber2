@@ -1,16 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Search Box</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Pages Search Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 400px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input[type="text"] {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+    input[type="text"]:focus {
+      border-color: #007BFF;
+    }
+    button {
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .note {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <h2>Search Box Example</h2>
+  <div class="container">
+    <h1>Search Box</h1>
+    <p>Enter something in the box below and submit it. You will receive the input via Formspree.</p>
+    
+    <!-- Replace YOUR_FORM_ID with your real Formspree ID -->
+    <form action="https://formspree.io/f/mkgvpryb" method="POST">
+      <input type="text" name="search" placeholder="Type something..." required>
+      <button type="submit">Send</button>
+    </form>
 
-  <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
-  <form action="https://formspree.io/f/mkgvpryb" method="POST">
-    <input type="text" name="search" placeholder="Type something..." required>
-    <button type="submit">Send</button>
-  </form>
-
+    <p class="note">Your input will be sent directly to your registered Formspree email.</p>
+  </div>
 </body>
 </html>
